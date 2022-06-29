@@ -1,9 +1,9 @@
 <?php
-require_once 'conexao.php';
+require_once 'conexao/conexao.php';
 session_start();
-if(!isset($_SESSION['logado'])){
-    header('Location: login.php');
-}
+// if(!isset($_SESSION['logado'])){
+//     header('Location: login.php');
+// }
 
 // cria a instrução SQL que vai selecionar os dados
 //$sql = "SELECT * FROM usuarios";
