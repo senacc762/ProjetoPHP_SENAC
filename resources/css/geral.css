@@ -1,0 +1,35 @@
+body{
+    background: rgb(1,199,247);
+    background: linear-gradient(90deg, rgba(1,199,247,1) 0%, rgba(255,226,0,1) 100%);
+    font-family: arial;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+.aa{
+    color: red;
+}
+a:hover{
+    color: white;
+}
+#box{
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 70px;
+    border-radius: 20px;
+    position: absolute;
+    margin: 0 auto;
+    top: 0; 
+    bottom: 0;
+    height: 300px;
+}
+h1{
+    text-align: center;
+    color: #ffff;
+}
+.tab{
+    width: 40vw;
+    margin: 0 auto;
+}
