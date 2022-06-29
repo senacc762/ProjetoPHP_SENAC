@@ -6,9 +6,9 @@ if(!isset($_SESSION['logado'])){
 }
 
 // cria a instrução SQL que vai selecionar os dados
-$sql = "SELECT * FROM usuarios";
+//$sql = "SELECT * FROM usuarios";
 // executa a query
-$resultado = mysqli_query($conexao, $sql);
+//$resultado = mysqli_query($conexao, $sql);
 //Transforma o resultado em array
 //while($dados = mysqli_fetch_array($resultado)){
 //$nome = $dados['nome'];
@@ -46,23 +46,16 @@ $resultado = mysqli_query($conexao, $sql);
                 </tr>
             </thead>
             <?php
-                $col = 0; 
-                while($dados = mysqli_fetch_array($resultado)){
-                $nome = $dados['nome'];
-                $senha = $dados['senha'];
-                $col = $col + 1;    
+                // $col = 0; 
+                // while($dados = mysqli_fetch_array($resultado)){
+                // $nome = $dados['nome'];
+                // $senha = $dados['senha'];
+                // $col = $col + 1;    
             ?>
             <tbody>
                 <tr>
-                    <th scope="row"><?php echo"$col"?></th>
-                    <td><?php echo"$nome";?></td>
-                    <td><?php echo"$senha";?></td>
-                    <td><?php 
-                        $del="<a class='btn btn-outline-danger' href='delete.php?nome=" . $nome . "'>Apagar</a>";
-                        echo"$del";
-                        ?></td>
+                    
                 </tr>
-            <?php } ?>    
             </tbody>
     
         </table>
