@@ -77,7 +77,7 @@ $result = $conexao->query($sql);
     
     <div class="tab" class="m-5">
         <div class="top" class="m-5">
-            <h1 class="display-7" id="pf">Padaria Ferragens</h1>
+            <h1 class="display-7" id="pf">Capital Ferragens</h1>
         </div>
         <table class="table table-bordered">
             <thead>
