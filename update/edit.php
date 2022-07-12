@@ -1,3 +1,35 @@
+<?php
+    if(!empty($_GET['id_produtos']))
+    {
+        include_once('../conexao/conexao.php');
+
+        $id = $_GET['id_produtos'];
+
+        $sqlSelect ="SELECT * FROM produtos WHERE id_produtos=$id";
+
+        $result = $conexao->query($sqlSelect);
+
+        if($result->num_rows > 0){
+
+            while($dados = mysqli_fetch_assoc($result))
+            {
+                $nome = $dados['nome'];
+                $marca = $dados['marca'];
+                $modelo = $dados['modelo'];
+                $valor = $dados['valor'];
+            }
+        }
+        else
+        {
+            header('Location: ../index.php');
+        }
+        
+    }
+    else
+    {
+        header('Location: ../index.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +37,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>Cadastro</title>
+    <title>Editar Produto</title>
     <style>
         body{
             background: linear-gradient(to right, #4856a2, #25525525);
@@ -63,22 +95,22 @@
     <a href="../index.php">Voltar</a>
     <div id="box">
 
-        <h1>Inserir produto</h1>
+        <h1>Editar Produto</h1>
         
-        <form action="cadastroprod.php" method="post">
+        <form action="update.php" method="post">
             <label for="produto">Nome</label>
-            <input type="text" name="produto">
+            <input type="text" name="produto" value="<?php echo $nome ?>">
 
             <label for="marca">Marca</label>
-            <input type="text" name="marca">
+            <input type="text" name="marca" value="<?php echo $marca ?>">
 
             <label for="modelo">Modelo</label>
-            <input type="text" name="modelo">
+            <input type="text" name="modelo" value="<?php echo $modelo ?>">
 
             <label for="valor">Preço</label>
-            <input type="number" onchange="setTwoNumberDecimal" min="0" step="0.25" value="0.00" name="valor">
-                      
-            <button type="submit">Inserir</submit>
+            <input type="number" onchange="setTwoNumberDecimal" min="0" step="0.25"  name="valor" value="<?php echo $valor ?>">
+            <input type="hidden" name="id" value="<?php echo $id?>">
+            <button type="submit" name="update" id="update">Salvar</submit>
             </form>
     </div>
     

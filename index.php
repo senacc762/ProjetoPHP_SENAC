@@ -37,47 +37,18 @@ $result = $conexao->query($sql);
         }
     </style>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<body>   
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-    
-    
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <a href="produtos/inserir.php"><button class="btn btn-outline-success" type="button">Novo Produto</button></a>
+        <!--<button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>-->
+      </form>
+    </nav>
+
     <div class="tab" class="m-5">
         <div class="top" class="m-5">
-            <h1 class="display-7" id="pf">Capital Ferragens</h1>
+            <h1 class="display-7" id="pf">Capital   Ferragens</h1>
         </div>
         <table class="table table-bordered">
             <thead>
@@ -87,7 +58,8 @@ $result = $conexao->query($sql);
                 <th scope="col">Marca</th>
                 <th scope="col">Modelo</th>
                 <th scope="col">Valor</th>
-                <th scope="col"></th> 
+                <th scope="col">UPDT</th> 
+                <th scope="col">Delete</th> 
                 </tr>
             </thead>
             <tbody>
@@ -100,6 +72,12 @@ $result = $conexao->query($sql);
                         echo "<td>" .$dados['marca']."</td>";
                         echo "<td>" .$dados['modelo']."</td>";
                         echo "<td>" .$dados['valor']."</td>";
+                        echo "<td><a href='update/edit.php?id_produtos=$dados[id_produtos]'>
+                        
+                        <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='currentColor' class='bi bi-pencil' viewBox='0 0 16 16'>
+  <path d='M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z'/>
+</svg>
+                        </a></td>";
                         echo "<tr>";
                     }
                 ?>

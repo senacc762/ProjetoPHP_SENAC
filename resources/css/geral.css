@@ -5,14 +5,15 @@ body{
 }
 a{
     text-decoration: none;
-    color: white;
+    color: #28a745;
     padding: 10px;
 }
 .aa{
     color: red;
 }
 a:hover{
-    color: white;
+    text-decoration: none;
+    color: #000000;
 }
 #box{
     width: 300px;
