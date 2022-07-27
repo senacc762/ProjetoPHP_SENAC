@@ -15,7 +15,7 @@
             {
                 $nome = $dados['nome'];
                 $marca = $dados['marca'];
-                $modelo = $dados['modelo'];
+                $tipo = $dados['tipo'];
                 $valor = $dados['valor'];
             }
         }
@@ -104,8 +104,8 @@
             <label for="marca">Marca</label>
             <input type="text" name="marca" value="<?php echo $marca ?>">
 
-            <label for="modelo">Modelo</label>
-            <input type="text" name="modelo" value="<?php echo $modelo ?>">
+            <label for="tipo">tipo</label>
+            <input type="text" name="tipo" value="<?php echo $tipo ?>">
 
             <label for="valor">Preço</label>
             <input type="number" onchange="setTwoNumberDecimal" min="0" step="0.25"  name="valor" value="<?php echo $valor ?>">
